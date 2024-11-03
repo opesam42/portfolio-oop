@@ -1,0 +1,301 @@
+@font-face {
+    font-family: "Open Sans Condensed Bold";
+    src: url('../fonts/OpenSans_Condensed-Bold.ttf');
+}
+@font-face {
+    font-family: "Open Sans Condensed ExtraBold";
+    src: url('../fonts/OpenSans_Condensed-ExtraBold.ttf');
+}
+
+
+/* customizing headers */
+header, footer{
+    background-color: inherit !important;
+}
+header{
+    box-shadow: 0px 4px 4px 0px rgba(226, 223, 223, 0.25);
+    margin-bottom: 3em;
+}
+footer{
+    box-shadow: 4px 0px 0px 4px rgba(226, 223, 223, 0.25);
+    margin-top: 3em;
+}
+header a, footer .social a, footer, .toggle-bar{
+    color: var(--sub-black) !important;
+}
+nav a:hover{
+    border-bottom: 2px solid var(--primary-color) !important;
+}
+
+/* customizing post */
+.proj .heading{
+    align-self: flex-start;
+    width: 100%;
+}
+.proj .links{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: .7em;
+}
+.proj .links a{
+    font-size: 1rem;
+    display: block;
+    color: var(--primary-color);
+    border-radius: .5em;
+}
+.proj .links a:hover{
+    text-decoration: underline;
+    transition: var(--transition1);
+}
+.proj .ul{
+    margin-bottom: .3em;
+}
+
+#post{
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+    /* align-items: center; */
+}
+#post h3{
+    margin-top: 1rem;
+}
+#post li{
+    margin-bottom: .6em;
+}
+#post img{
+    width: 100%;
+    height: auto;
+    align-self: center;
+}
+#post a{
+    text-decoration: underline;
+    color: inherit;
+}
+img.dp{
+    width: 40% !important; 
+    display: block;   
+}
+#post p{
+    margin-bottom: .5em;
+}
+
+#post figure.image{
+    align-self: center;
+}
+#post figcaption{
+    font-size: .8em;
+    text-align: center;
+    font-weight: bold;
+}
+@media screen and (max-width: 701px) {
+    #post h1{
+        /* reduce font of case studies main header */
+        font-size: 1.8em;
+    }
+}
+main{
+    width: 100%;
+    max-width: 800px;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 1.1em;
+}
+main.md{
+    width: 100%;
+    font-size: 1em;
+    gap: 2em;
+    align-items: center;
+    max-width: 400px;
+}
+main.contact{
+    width: 100%;
+    gap: 2em;
+}
+
+@media screen and (min-width: 750px) {
+    main.contact{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .contact-option{
+        border-left: 1px solid #ccc;
+        align-self: stretch;
+        padding-left: 1em;
+    }
+    .contact-image.contact-image{
+        display: block;
+    }
+}
+/* @media screen and (min-width: 550px) {
+    main.proj{
+        font-size: 1.2em;
+    }
+} */
+
+main h1{
+    font-family: 'Open Sans Condensed ExtraBold', 'DM Sans';
+    font-size: 2.5em;
+    margin-bottom: 1.5rem; margin-top: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+main h2, main h3{
+    font-family: 'Open Sans Condensed Bold', 'DM Sans';
+}
+p{
+    margin-bottom: 2em;
+}
+
+
+
+
+form{
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    /* align-self: flex-start; */
+    order: 3;
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--sub-shade-black);
+}
+form.ckeditor_form{
+    order: 0;
+}
+
+
+label{
+    display: block;
+}
+.label{
+    display: inline-block;
+    margin-bottom: .3em;
+}
+input, textarea{
+    width: 100%;
+    padding: .5em;
+    background-color: transparent;
+    border: .5px solid var(--sub-black);
+    border-radius: .1em;
+    font-family: inherit;
+    font-size: .8em;
+    resize: none;
+    outline: none;
+}
+input:focus, textarea:focus{
+    border-color: var(--primary-color);
+    transition: var(--transition1)
+}
+
+textarea{
+    height: 15em;
+}
+input[type='submit']{
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+input[type='submit']:hover{
+    background-color: var(--sub-white);
+    color: var(--primary-color);
+    border: .1em solid var(--primary-color);
+    transition: var(--transition1);
+}
+input.errorInput, textarea.errorInput{
+    border-color: red;
+    transition: var(--transition1);
+}
+.errorMes, .success{
+    padding: .5em 1em;
+    color: white;
+
+    opacity: 0;
+    animation: showMessage 3s ease forwards;
+    /* font-weight: bold; */
+}
+@keyframes showMessage {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+@keyframes hideMessage {
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+.errorMes{
+    background-color: rgb(246, 219, 219);
+}
+.error{
+    font-size: .8em;
+    color: red;
+    transition: var(--transition1);
+}
+.success{
+    font-size: .8em;
+    background-color: #70abe2;
+}
+
+
+.contact-image{
+    width: 100%;
+    display: none;
+}
+.icon-svg path {
+    fill: var(--primary-color);
+  }
+  
+.icon-svg:hover path {
+    fill: var(--sub-black); /* New fill color on hover (red in this case) */
+  }
+
+.copy-svg{
+    color: var(--primary-color);
+}
+/* .contact-option div:first-child{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+} */
+
+.contact-option div:nth-child(2){
+    display: flex;
+    gap: .2em;
+}
+main a{
+    transition: var(--transition1)
+}
+   
+main a:hover{
+    color: var(--sub-shade-black);
+    transition: var(--transition1)
+}
+
+#copyBtn {
+    cursor: pointer;
+    color: black;
+}
+form br{
+    display: none;
+}
+.ckeditor_form br{
+    display: block;
+}
