@@ -1,4 +1,4 @@
 /.env
 /test.php
-# /vendor/
-# /vendor/composer/
+/vendor/
+/vendor/composer/
