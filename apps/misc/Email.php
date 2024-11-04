@@ -4,7 +4,7 @@
 
 class Email{
     private function loadMailer(){
-        require __DIR__ . '/../vendor/autoload.php';
+        require __DIR__ . '/../../vendor/autoload.php';
         return new PHPMailer(true);  
     }
 
