@@ -7,7 +7,7 @@ define("EMAIL_PSWD", $_ENV['EMAILPASSWORD']);
 define("EMAIL_USER", 'opesam42@gmail.com');
 
 if($_SERVER['SERVER_NAME'] == "127.0.0.1"){
-    define("ROOT", "http://127.0.0.1/projects/portfolio2/public/");    
+    define("ROOT", "http://127.0.0.1/projects/portfolio-github/portfolio-oop/public/");    
 }else{
     define("ROOT", "https://gbenga.koyeb.app/");   
 }

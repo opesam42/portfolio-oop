@@ -1,0 +1,7 @@
+[submodule "public/vendor/symfony/polyfill-ctype"]
+  path = public/vendor/symfony/polyfill-ctype
+  url = https://github.com/symfony/polyfill-ctype.git
+
+[submodule "public/vendor/symfony/polyfill-mbstring"]
+    path = public/vendor/symfony/polyfill-mbstring
+    url = https://github.com/symfony/polyfill-mbstring.git
