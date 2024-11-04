@@ -2,7 +2,9 @@
 // require "../../apps/core/config.php";
 
 // Set the target directory for uploads (relative to this script's location)
-$targetDir = '../../uploads/';
+// $targetDir = '../../uploads/';
+
+$targetDir = __DIR__ . '/../uploads/';
 
 // Check if the upload directory exists; if not, create it
 if (!file_exists($targetDir)) {
