@@ -38,7 +38,7 @@ require('include/header.php');
             <a class="card" href="<?=ROOT?>project/<?php echo $project->slug; ?>">
                 <article>
                     <div class="img-wrapper">
-                        <img src="<?php echo ROOT . "uploads/cover" . $project->cover_image; ?>" alt="Cover image for <?php echo $project->title; ?>" width="100%">
+                        <img src="<?php echo ROOT . "uploads/cover/" . $project->cover_image; ?>" alt="Cover image for <?php echo $project->title; ?>" width="100%">
                     </div>
                     <div class="detail">
                         <h3 class="proj-title"><?php echo $project->title; ?></h3>
