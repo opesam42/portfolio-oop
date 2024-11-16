@@ -5,7 +5,7 @@
 // $targetDir = '../../uploads/';
 
 // $targetDir = __DIR__ . '/uploads/';
-$targetDir = '../../uploads/';
+$targetDir = '../uploads/';
 
 // Check if the upload directory exists; if not, create it
 if (!file_exists($targetDir)) {
