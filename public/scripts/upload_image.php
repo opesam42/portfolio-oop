@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
                 // Construct the URL dynamically based on the server's base URL
                 $baseUrl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'];
-                $fileUrl = $baseUrl . '/projects/portfolio2/uploads/' . $fileName;
+                $fileUrl = '/uploads/' . $fileName;
 
                 // Return the image URL in JSON format
                 $response = [
