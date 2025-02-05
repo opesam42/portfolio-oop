@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /
+    #RewriteBase /
 
     # Accept loading of actual files and directories
     RewriteCond %{REQUEST_FILENAME} !-f
