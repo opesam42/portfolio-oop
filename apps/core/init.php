@@ -21,6 +21,7 @@ spl_autoload_register(function($classname) {
 require "config.php";
 require "functions.php";
 require "App.php";
+require "ApiController.php";
 require "Controller.php";
 require "Database.php";
 require "Model.php";

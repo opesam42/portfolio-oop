@@ -148,6 +148,18 @@ require('include/header.php');
         </div>
     </section>
 
+    <section>
+        <div x-data="{ projectList: [] }" 
+        x-init="
+            fetch('api/getprojects')
+            .then(res => res.json())
+            .then(data => projectList = data)">
+            <template x-for="project in projectList" :key="project.id">
+                <h2 x-text="project.title"></h2>
+            </template>
+        </div>
+    </section>
+    
 
         <?php
             require('include/footer.php');

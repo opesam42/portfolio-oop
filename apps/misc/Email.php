@@ -23,10 +23,10 @@ class Email{
             $mail->Password = EMAIL_PSWD;
     
             //Recipient
-            $mail->setFrom('gbengaopeyemi04@gmail.com', 'Gbenga Opeyemi');
+            $mail->setFrom('oluwagbemigaopeyemi2004@gmail.com', 'Gbenga Opeyemi');
             $mail->addAddress( $email, $name );
-            $mail->addAddress('gbengaopeyemi04@gmail.com');
-            // $mail->addAddress('opesam42@gmail.com');
+            $mail->addAddress('oluwagbemigaopeyemi2004@gmail.com');
+            $mail->addAddress('opesam42@gmail.com');
     
             //Content
             $sanitized_message = str_replace(array("\\r", "\\n", "\r", "\n"), "<br>", $message);
@@ -64,12 +64,11 @@ class Email{
             </html>";
             
             $mail->send();
-            // if( $mail->send() ){
-            //     header("Location: ". $_SERVER['PHP_SELF'] . "?success");
-            // }
+            
     
-        } catch(Exception $e){
+        } catch(Exception $err){
             echo "Message cannot be sent. Mailer Error: {$mail->ErrorInfo}";
+            error_log($err->getMessage());
             // header("Location: " . $_SERVER['PHP_SELF'] . "error");
         }
     }

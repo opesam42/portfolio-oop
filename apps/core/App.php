@@ -13,6 +13,17 @@ class App{
 
     public function loadController(){
         $URL = $this->splitURL();
+
+        // if it is an api
+        if ($URL[0] === 'api'){
+            require_once "../apps/core/ApiController.php";
+
+            $api_controller = new ApiController();
+            // $api_controller->run_api();
+            $api_controller->dispatch();
+            exit();
+        }
+
         $directories = [
             '../apps/controller/',
             '../apps/controller/Admin/',

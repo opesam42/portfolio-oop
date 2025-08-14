@@ -46,14 +46,21 @@ class Contact{
     }
 
     private function sendEmail(){
-        $email = new Email();
+        try{
+             $email = new Email();
 
-        $name = $_POST['userName'];
-        $userEmail = $_POST['userEmail'];
-        $mobile = $_POST['userTel'];
-        $message = $_POST['message'];
+            $name = $_POST['userName'];
+            $userEmail = $_POST['userEmail'];
+            $mobile = $_POST['userTel'];
+            $message = $_POST['message'];
 
-        return $email->sendMail($name, $userEmail, $mobile, $message);
+            return $email->sendMail($name, $userEmail, $mobile, $message);
+        }
+
+        catch(Exception $err){
+            error_log(''. $err->getMessage());
+        }
+       
     }
 
 }
