@@ -19,14 +19,14 @@ class Email{
             $mail->Port = 465;
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = 'ssl';
-            $mail->Username = EMAIL_USER;
-            $mail->Password = EMAIL_PSWD;
+            $mail->Username = ADMIN_EMAIL;
+            $mail->Password = ADMIN_EMAIL_PSWD;
     
             //Recipient
-            $mail->setFrom('oluwagbemigaopeyemi2004@gmail.com', 'Gbenga Opeyemi');
+            $mail->setFrom(ADMIN_EMAIL, AUTHOR);
             $mail->addAddress( $email, $name );
-            $mail->addAddress('oluwagbemigaopeyemi2004@gmail.com');
-            $mail->addAddress('opesam42@gmail.com');
+            $mail->addAddress(ADMIN_EMAIL_BACKUP1);
+            $mail->addAddress(ADMIN_EMAIL_BACKUP2);
     
             //Content
             $sanitized_message = str_replace(array("\\r", "\\n", "\r", "\n"), "<br>", $message);
@@ -69,7 +69,6 @@ class Email{
         } catch(Exception $err){
             echo "Message cannot be sent. Mailer Error: {$mail->ErrorInfo}";
             error_log($err->getMessage());
-            // header("Location: " . $_SERVER['PHP_SELF'] . "error");
         }
     }
 
