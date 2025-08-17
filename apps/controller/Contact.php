@@ -47,7 +47,7 @@ class Contact{
 
     private function sendEmail(){
         try{
-             $email = new Email();
+            $email = new Email();
 
             $name = $_POST['userName'];
             $userEmail = $_POST['userEmail'];
