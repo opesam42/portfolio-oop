@@ -23,9 +23,9 @@ class ImageUploadTest {
         ];
 
         try {
-            $result = $this->uploadToB2($sub_folder="test");
-            if ($result) {
-                echo "Test passed: File uploaded to $result\n";
+            $keyName = $this->uploadToB2($sub_folder="test");
+            if ($keyName) {
+                echo "Test passed: File uploaded to " . B2_BASE_URL . $keyName . "\n";
             } else {
                 echo "Test failed: Upload did not succeed.\n";
             }

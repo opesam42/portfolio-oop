@@ -20,6 +20,9 @@ define("B2_BUCKET_NAME", $_ENV['B2_BUCKET_NAME']);
 define("B2_REGION", $_ENV['B2_REGION']);
 define("B2_BUCKET_ID", $_ENV['B2_BUCKET_ID']);
 define("B2_ENDPOINT", $_ENV['B2_ENDPOINT']);
+// define("B2_BASE_URL", B2_ENDPOINT . '/' . B2_BUCKET_NAME . '/');
+define("B2_BASE_URL", "https://f003.backblazeb2.com/file/eaglespoint-website/");
+
 
 if($_SERVER['SERVER_NAME'] == "127.0.0.1"){
     define("ROOT", "http://127.0.0.1/projects/portfolio-github/portfolio-oop/public/");    

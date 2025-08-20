@@ -35,12 +35,14 @@ class B2Storage {
                 'Key'    => $keyName,
                 'Body'   => fopen($filePath, 'r'),
                 'ACL'    => 'public-read',
+                'ContentType' => mime_content_type($filePath),
+                'ContentDisposition' => 'inline' 
             ]);
-            echo "File uploaded successfully!\n";
-            echo "File URL: {$result['ObjectURL']}\n";
+            error_log("File uploaded successfully!\n");
+            error_log("File URL: {$result['ObjectURL']}\n");
             return $result['ObjectURL'];
         } catch (AwsException $e) {
-            echo "Error: " . $e->getAwsErrorMessage() . "\n";
+            error_log("Error: " . $e->getAwsErrorMessage() . "\n");
             return false;
         }
     }

@@ -1,5 +1,5 @@
 <?php
-// require "../../apps/core/config.php";
+require "../../apps/core/config.php";
 
 // Set the target directory for uploads (relative to this script's location)
 // $targetDir = '../../uploads/';
@@ -31,8 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Move the uploaded file to the target directory
             if (move_uploaded_file($file['tmp_name'], $targetFilePath)) {
                 // Construct the URL dynamically based on the server's base URL
-                $baseUrl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'];
-                $fileUrl = '/uploads/' . $fileName;
+                // $baseUrl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'];
+                $fileUrl = ROOT . '/uploads/' . $fileName;
+                error_log("FullURL- " .  $fileUrl);
 
                 // Return the image URL in JSON format
                 $response = [

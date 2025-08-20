@@ -40,3 +40,7 @@ function slugGenerator($title){
 
     return $slug;
 }
+
+function append_b2_base_url($path){
+    return rtrim(B2_BASE_URL, '/') . '/' . ltrim($path, '/');
+}

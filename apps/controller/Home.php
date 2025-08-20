@@ -6,6 +6,16 @@ class Home {
 
     public function index(){
         $projects = $this->getProjects();
+        
+        // append b2_base_url to the cover image
+        foreach ($projects as $project){
+            if(empty($project->cover_image)){
+                continue;
+            }
+
+            $project->cover_image = append_b2_base_url($project->cover_image);
+        }        
+
         $this->view('home', ['projects'=>$projects]);
     }
     private function getProjects(){
