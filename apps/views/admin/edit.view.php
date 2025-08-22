@@ -86,7 +86,7 @@ $contentSanitized = "<p>" . preg_replace("/\n/", "</p><p>", $row['content']);
         <?php } ?>
         
         <label for="image">Cover Image
-            <input type="file" name="image" accept="image/*">
+            <input type="file" name="cover_image" accept="image/*">
         </label>
         
         <label for="descr">Description

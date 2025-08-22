@@ -12,19 +12,38 @@ class Project {
         if(empty($project)){
             $this->view("404");
             exit();
+        } else{
+            $project = (array) $project[0];
         }
+        // echo var_dump($project);
+        // append base_b2_url to the image src of the project post
+        try{
+            require_once __DIR__ . '../../misc/CkeditorFileUrlHelper.php';
+            $helper = new CkeditorFileUrlHelper();
+            $project['content'] = $helper->appendBaseUrl( $project['content'] );
+        } catch(Exception $err){
+            error_log("Error appending base URL: " . $err->getMessage());
+        }
+        
+        try{
+            if(isset($project["cover_image"])){
+                $project['cover_image'] = append_b2_base_url($project['cover_image']);
+                error_log("CoverImageURL " . $project['cover_image']);
+            }
+        } catch(Exception $err){
+            error_log("Error appending base URl " . $err->getMessage());
+        }
+        
         $projectList = $this->getOtherPost($slug);
 
         $this->view('project', [
-            'project'=> (array) $project[0],
+            'project'=> $project,
             'otherProjects'=> $projectList,
         ]);
     }
 
     private function getPost($slug){
         $projectModel = new CaseStudies();
-        // fetch project
-        // $arr['slug'] = 'yale-school-of-arts';
         $arr['slug'] = $slug;
         return $projectModel->where($arr);
     }
@@ -34,7 +53,17 @@ class Project {
         //fetch other projects
         $arr['is_visible'] = 1;
         $arr_not['slug'] = $slug;
-        return $projectModel->where($arr, $arr_not);
+        $projects = $projectModel->where($arr, $arr_not);
+
+        // appending b2 url to the cover image
+        foreach ($projects as $project){
+            if(empty($project->cover_image)){
+                continue;
+            }
+            $project->cover_image = append_b2_base_url($project->cover_image);
+        }       
+        
+        return $projects;
     }
 
 }

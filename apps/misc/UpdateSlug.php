@@ -8,7 +8,7 @@ class UpdateSlug{
     function updateSlug(){
         $posts = $this->getPosts();
         foreach ($posts as $post){
-            $titleSlug = slugGenerator($post->title);
+            $titleSlug = slugify($post->title);
             $arr['slug'] = $titleSlug;
             $id = $post->id;
 

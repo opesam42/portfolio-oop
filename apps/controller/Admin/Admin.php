@@ -71,14 +71,13 @@ class Admin{
     }
 
     public function handleAddForm() {
-
-        // pass needed parameters for coverimage upload
-        $this->targetdir = 'uploads/cover/';
-        // $this->existingImage = $postDetails['cover_image'];
-
+        require_once __DIR__ . '../../../misc/CkeditorFileUrlHelper.php';
+        $helper = new CkeditorFileUrlHelper();
+        
         $data = [
             'title' => $_POST['title'],
             'date_posted' => date('Y-m-d H:i:s'),
+            'date_modified' => date('Y-m-d H:i:s'),
             'description' => $_POST['descr'],
             'cover_image' => $this->uploadToB2($sub_folder="cover"),
             'is_visible' => $_POST['visibility'],
@@ -86,7 +85,8 @@ class Admin{
             'live_site_link' => $_POST['live_site_link'],
             'design_link' => $_POST['design_link'],
             'github_link' => $_POST['github_link'],
-            'content' => $_POST['content'],
+            'content' => $helper->stripBaseUrl( $_POST['content'] ),
+            'slug' => slugify($_POST['title']), 
         ];
         $projectModel = new CaseStudies();
         return $projectModel->add($data);
@@ -113,37 +113,49 @@ class Admin{
                 redirect(ROOT . "admin");
             }
         }
-
         
-        // imageUpload class image is given the directory of the original image
+        // append base_b2_url to the image src of the project post
+        require_once __DIR__ . '../../../misc/CkeditorFileUrlHelper.php';
+        $helper = new CkeditorFileUrlHelper();
+        $postDetails['content'] = $helper->appendBaseUrl( $postDetails['content'] );
+        if (isset($postDetails['cover_image']) && !empty($postDetails['cover_image'])) {
+            $postDetails['cover_image'] = $helper->appendBaseUrl( $postDetails['cover_image'] );
+        }
 
-        // pass to views
+        // pass to view
         $this->view('edit', [
             'row' => $postDetails,
         ] );
-        // echo $result[0]->title;
         return $postDetails;
         
     }
 
     public function handleEditForm($postDetails) {
+        $this->imageInput = 'cover_image';
+        // Default to existing cover image
+        $coverImage = $postDetails['cover_image'];
 
-        // pass needed parameters for coverimage upload
-        $this->targetdir = 'uploads/cover/';
-        $this->existingImage = $postDetails['cover_image'];
+        // If a new file was uploaded, override it
+        if (!empty($_FILES[$this->imageInput]['name'])) {
+            $coverImage = $this->uploadToB2($sub_folder = "cover");
+        }
+
+        require_once __DIR__ . '../../../misc/CkeditorFileUrlHelper.php';
+        $helper = new CkeditorFileUrlHelper();
 
         $data = [
             'title' => $_POST['title'],
             'date_modified' => date('Y-m-d H:i:s'),
             'description' => $_POST['descr'],
-            'cover_image' => $this->uploadToB2($sub_folder="cover"),
+            'cover_image' => $coverImage,
             'is_visible' => $_POST['visibility'],
             'project_type' => $_POST['proj_type'],
             'live_site_link' => $_POST['live_site_link'],
             'design_link' => $_POST['design_link'],
             'github_link' => $_POST['github_link'],
-            'content' => $_POST['content'],
+            'content' => $helper->stripBaseUrl( $_POST['content'] ),
         ];
+        
         $projectModel = new CaseStudies();
         $id = $postDetails['id'];
         return $projectModel->update($data, $id);

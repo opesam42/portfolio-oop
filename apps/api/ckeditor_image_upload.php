@@ -35,14 +35,12 @@ function uploadCKEditorImage(){
         }
 
         $fullURL = append_b2_base_url($keyName);
-        // $fullURL = "http://127.0.0.1/projects/portfolio-github/portfolio-oop/public/uploads/lofi-grid.jpg";
         
         $response = ['url' => $fullURL];
         error_log('Uploaded - ' . $fullURL);
         header('Content-Type: application/json');
         echo json_encode($response);
-        
-        // exit;
+        exit;
 
     } catch(Exception $err){
         echo json_encode(['error' => ['message' => 'Failed to upload file: ' . $err->getMessage()]]);

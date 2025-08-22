@@ -33,16 +33,16 @@ nav a:hover{
     width: 100%;
 }
 .proj .links{
-    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    gap: .7em;
-}
-.proj .links a{
+    flex-direction: column;
+    align-items: center;
     font-size: 1rem;
-    display: block;
-    color: var(--primary-color);
-    border-radius: .5em;
+    /* gap: .7em; */
+}
+.proj div{
+    display: flex;
+    gap: .5em;
+    align-items: center;
 }
 .proj .links a:hover{
     text-decoration: underline;
@@ -143,7 +143,7 @@ main h1{
     font-size: 2.5em;
     margin-bottom: 1.5rem; margin-top: 1.5rem;
     text-align: center;
-    color: var(--primary-color);
+    color: var(--sub-black);
 }
 main h2, main h3{
     font-family: 'Open Sans Condensed Bold', 'DM Sans';

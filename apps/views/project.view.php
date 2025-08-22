@@ -7,19 +7,8 @@ require('include/header.php');
 
 <main class="proj">
     <section class="heading">
-        <img src="<?php echo ROOT . "uploads/cover/" . $project['cover_image']; ?>" alt="Cover image for <?php echo $project['title']; ?>" width="100%" style="display:block">
         <h1><?php echo $project['title']; ?></h1>
-        <div class="links">
-            <?php if (!empty($project['design_link'])) { ?>
-                <a href="<?php echo $project['design_link']; ?>" target="_blank"><i class="fa fa-paint-brush"></i> Design Prototype</a>
-            <?php } ?>
-            <?php if (!empty($project['live_site_link'])) { ?>
-                <a href="<?php echo $project['live_site_link']; ?>" target="_blank"><i class="fa fa-globe"></i> Live Site</a>
-            <?php } ?>
-            <?php if (!empty($project['github_link'])) { ?>
-                <a href="<?php echo $project['github_link']; ?>" target="_blank"><i class="fa fa-github"></i> Github</a>
-            <?php } ?>
-        </div>
+        <img src="<?php echo $project['cover_image']; ?>" alt="Cover image for <?php echo $project['title']; ?>" width="100%" style="display:block">
 
         <?php if (isset($_SESSION['admin'])) { ?>
             <a href="<?php echo ROOT . "admin/edit/" . $project['slug']?>">Edit</a>
@@ -27,6 +16,14 @@ require('include/header.php');
     </section>
 
     <section id="post">
+        <div class="links">
+            <?php if (!empty($project['live_site_link'])) { ?>
+                <div><i class="fa fa-link"></i><a href="<?php echo $project['live_site_link']; ?>" target="_blank"><?php echo $project['live_site_link']; ?></a></div>
+            <?php } ?>
+            <?php if (!empty($project['github_link'])) { ?>
+                <div><i class="fa fa-github"></i><a href="<?php echo $project['github_link']; ?>" target="_blank">Github Repo</a></div>
+            <?php } ?>
+        </div>
         <?php echo $project['content']; ?>
     </section>
 </main>
@@ -38,7 +35,7 @@ require('include/header.php');
             <a class="card" href="<?=ROOT?>project/<?php echo $project->slug; ?>">
                 <article>
                     <div class="img-wrapper">
-                        <img src="<?php echo ROOT . "uploads/cover/" . $project->cover_image; ?>" alt="Cover image for <?php echo $project->title; ?>" width="100%">
+                        <img src="<?php echo  $project->cover_image; ?>" alt="Cover image for <?php echo $project->title; ?>" width="100%">
                     </div>
                     <div class="detail">
                         <h3 class="proj-title"><?php echo $project->title; ?></h3>
