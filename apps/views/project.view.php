@@ -8,7 +8,7 @@ require('include/header.php');
 <main class="proj">
     <section class="heading">
         <h1><?php echo $project['title']; ?></h1>
-        <img src="<?php echo $project['cover_image']; ?>" alt="Cover image for <?php echo $project['title']; ?>" width="100%" style="display:block">
+        <img class="cover-image" src="<?php echo $project['cover_image']; ?>" alt="Cover image for <?php echo $project['title']; ?>" width="100%" style="display:block">
 
         <?php if (isset($_SESSION['admin'])) { ?>
             <a href="<?php echo ROOT . "admin/edit/" . $project['slug']?>">Edit</a>

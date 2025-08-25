@@ -33,6 +33,7 @@ nav a:hover{
     width: 100%;
 }
 .proj .links{
+    margin-bottom: 1.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,7 +49,10 @@ nav a:hover{
     text-decoration: underline;
     transition: var(--transition1);
 }
-.proj .ul{
+.proj .cover-image{
+    margin-bottom: 48px;
+}
+#proj .ul{
     margin-bottom: .3em;
 }
 
@@ -60,7 +64,20 @@ nav a:hover{
 }
 #post h3{
     margin-top: 1rem;
+    margin-bottom: .5em;
 }
+#post ul, #post ol{
+    margin-left: 2em;
+}
+
+#post ul{
+    list-style-type: disc;
+}
+
+#post ol{
+    list-style-type: decimal;
+}
+
 #post li{
     margin-bottom: .6em;
 }
@@ -144,6 +161,7 @@ main h1{
     margin-bottom: 1.5rem; margin-top: 1.5rem;
     text-align: center;
     color: var(--sub-black);
+    text-transform: uppercase;
 }
 main h2, main h3{
     font-family: 'Open Sans Condensed Bold', 'DM Sans';

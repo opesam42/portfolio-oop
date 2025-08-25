@@ -4,6 +4,50 @@ class Admin{
     use Controller;
     use ImageUpload;
 
+    private function submitForm(){
+        if($_SERVER['REQUEST_METHOD'] === "POST"){
+            $result = $this->handleFormSubmission();
+
+            if($result){
+                $_SESSION['admin'] = $result[0]->id;
+            }  else {
+                header("Location: " . getURL() . "?error=1"); // fail
+                // header("Location: " . getURL());
+                exit();
+            }
+            
+        }
+    }
+
+    private function handleFormSubmission(){
+        $username = $_POST['username'] ?? null;
+        $password = $_POST['password'] ?? null;
+
+         if (!$username || !$password) {
+            error_log("Username or password field is empty");
+            return null;
+        }
+
+        $adminModel = new AdminModel();
+        $arr['username'] = $username;
+        $adminInstance = $adminModel->where($arr);
+
+        if (empty($adminInstance)) {
+            error_log("user not found");
+            return null; // user not found
+        }
+
+        $hashedPassword = $adminInstance[0]->password ?? null;
+        if ($hashedPassword && password_verify($password, $hashedPassword)){
+            return $adminInstance;
+            error_log("Admin login successful: " . $username);
+            return $adminInstance;
+        }
+
+        error_log("wrong password");
+        return null; //wrong password
+    }
+
     function index(){
         $this->submitForm();
         $projects = $this->getProjects();
@@ -13,28 +57,6 @@ class Admin{
             'admin' => $adminSession,
             'projects' => $projects,
         ]);
-    }
-
-    public function submitForm(){
-        if($_SERVER['REQUEST_METHOD'] === "POST"){
-            $result = $this->handleFormSubmission();
-
-            if($result){
-                $_SESSION['admin'] = $result[0]->id;
-            }
-            header("Location: " . getURL());
-            exit();
-        }
-    }
-
-    private function handleFormSubmission(){
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-
-        $adminModel = new AdminModel();
-        $arr['username'] = $username;
-        $arr['password'] = $password;
-        return $adminModel->where($arr);
     }
 
     private function getProjects(){

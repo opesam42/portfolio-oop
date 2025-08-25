@@ -14,3 +14,8 @@ echo "<pre>" . htmlspecialchars($cleaned_str) . "</pre>";
 
 echo "<h1>STRING WITH B2 URL</h1>";
 echo "<pre>" . htmlspecialchars($append_str) . "</pre>";
+
+$password = "C# Language1";  // your real password
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+echo $hashedPassword;

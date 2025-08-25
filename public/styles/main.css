@@ -552,6 +552,7 @@ header .cta:hover{
 .case-studies .proj-title{
     font-style: normal;
     font-weight: 800;
+    text-transform: uppercase;
 }
 
 .case-studies .proj-link{
