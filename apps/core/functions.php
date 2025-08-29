@@ -32,7 +32,7 @@ function relURL() {
 
 
 function slugify($str){
-    // change to lowercase
+    // slugify string 
     $slug = strtolower( $str );
     $slug = preg_replace('/\s+/', '-', $slug);
     $slug = preg_replace('/[^a-z0-9\-]/', '', $slug);
