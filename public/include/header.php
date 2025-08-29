@@ -46,6 +46,7 @@
 
         <!--main styles-->
         <link href="<?=ROOT?>styles/main.css" rel="stylesheet">
+        <link href="<?=ROOT?>styles/output.css" rel="stylesheet">
 </head>
 
 

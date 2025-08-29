@@ -62,7 +62,6 @@ h4, .lg{
 }
 a{
     text-decoration: none;
-    color: var(--sub-black);
 }
 main a{
     color: var(--primary-color);
@@ -347,6 +346,11 @@ footer .social a {
 .hero-section .cta{
     width: fit-content;
     margin-top: 2em;
+}
+.hero-section.cta2{
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
 }
 .cta:hover{
     opacity: 70%;

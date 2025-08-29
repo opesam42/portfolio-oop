@@ -8,7 +8,12 @@ require('include/header.php');
                 <div class="title">Hi, I'm <span class="dot-ul">Gbenga Opeyemi</span></div>
                 <div class="sub-title">A <strong style="color:yellow; font-weight:500;">Junior Web Developer and UX/UI Designer</strong>. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
 
-                <a class="cta" href="<?=ROOT?>/contact">Let's Connect</a>
+                <div class="flex gap-2 mt-6">
+                    <a class="main-cta bg-white text-blue-500" href="<?=ROOT?>/contact">Let's Connect</a>
+
+                    <a class="main-cta text-white border-2 border-white" target="_blank" href="https://f003.backblazeb2.com/file/eaglespoint-website/gbenga_portfolio/my_resume/OLUWAGBEMIGA+OPEYEMI+CV+V2.pdf">Download CV</a>
+                </div>
+                
                 
 
             </div>

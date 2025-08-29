@@ -30,7 +30,12 @@ It showcases my projects, skills, and experience in web development.
    ```bash
    cd xampp/htdocs
    git clone https://github.com/yourusername/php-portfolio.git
-
+3. Install PHP dependencies
+   ```bash
+   composer install
+4. Install Node.JS dependencies (e.g. Tailwind)
+   ```bash
+   npm install
 
 ## Live website
 [https://gbenga.koyeb.app](https://gbenga.koyeb.app).
