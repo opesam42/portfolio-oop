@@ -1,4 +1,5 @@
+/public/phpinfo.php
+/public/opcache-status.php
 /public/.env
-/public/test.php
 /node_modules/
 /vendor/

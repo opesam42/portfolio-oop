@@ -33,15 +33,8 @@ trait ImageUpload {
             $result = $b2->upload(
                 $file['tmp_name'], 
                 $keyName,
-                // [
-                //     'FileInfo' => [
-                //         'b2-content-disposition' => 'inline'
-                //     ],
-                //     'ContentType' => mime_content_type($file['tmp_name'])
-                // ]
             );
-            if ($result) {
-                $this->existingImage = $keyName; 
+            if ($result) { 
                 return $keyName;
             }
         }
