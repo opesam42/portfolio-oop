@@ -11,7 +11,7 @@ trait ImageUpload {
             $file = $_FILES[$this->imageInput];
             $filename = basename($file['name']);
             $fileType = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-            $allowedTypes = ['jpg', 'jpeg', 'png', 'gif'];
+            $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
 
             if (!in_array($fileType, $allowedTypes)) {
                 $err = "{$fileType} is not allowed";

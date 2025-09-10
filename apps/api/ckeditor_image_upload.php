@@ -26,6 +26,8 @@ class CkeditorImageUpload{
 function uploadCKEditorImage(){
     $imageUpload = new CkeditorImageUpload();
     try{
+        // Start measuring time
+        $start = microtime(true);
 
         $keyName = $imageUpload->uploadToB2($sub_folder='project/');
         if (!$keyName) {
@@ -38,6 +40,12 @@ function uploadCKEditorImage(){
         
         $response = ['url' => $fullURL];
         error_log('Uploaded - ' . $fullURL);
+
+        // End measuring time
+        $end = microtime(true);
+        $executionTime = $end - $start;
+        error_log('⏱ uploadCKEditorImage() took ' . $executionTime . ' seconds.');
+
         header('Content-Type: application/json');
         echo json_encode($response);
         exit;
