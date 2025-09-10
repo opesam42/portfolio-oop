@@ -73,9 +73,7 @@ $contentSanitized = "<p>" . preg_replace("/\n/", "</p><p>", $row['content']);
 
 <div class="edit-form-container">
     <h2>Edit Project</h2>
-    <form action="" method="post" enctype="multipart/form-data" class="ckeditor_form">
-        <input type="hidden" name="validproj" value="<?php echo $validproj; ?>">
-        
+    <form action="" method="post" enctype="multipart/form-data" class="ckeditor_form">        
         <label for="title">Title
             <input type="text" name="title" value="<?php echo htmlspecialchars($row['title']); ?>">
         </label>

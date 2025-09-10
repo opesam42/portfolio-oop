@@ -17,7 +17,7 @@
     <meta name="robots" content="index, follow">
 
     <title><?php echo $headTitle; ?></title>
-    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="icon" src="<?php echo ROOT?>assets/favicon.png" type="image/png">
 
     <!-- add tailwind css -->
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->

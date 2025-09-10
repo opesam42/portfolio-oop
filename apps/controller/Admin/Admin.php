@@ -117,7 +117,6 @@ class Admin{
 
     // for edit page
     public function edit($a=null, $b=null, $slug=""){
-        
         $adminSession = $_SESSION['admin'] ?? null; // save admin
         if(empty($adminSession)){
             redirect(ROOT . "admin"); //if admin session is not present, redirect to login
@@ -126,6 +125,13 @@ class Admin{
         $projectModel = new CaseStudies();
         $arr['slug'] = $slug;
         $result = $projectModel->where($arr);
+        // error_log(print_r($result[0], true));
+        if (!isset($result[0])){
+            debug_log("No project found with slug: " . $slug);
+            redirect(ROOT . "admin");
+        }
+    
+        debug_log("slug" .$slug);
         $postDetails = (array) $result[0];
 
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
@@ -139,9 +145,16 @@ class Admin{
         // append base_b2_url to the image src of the project post
         require_once __DIR__ . '../../../misc/CkeditorFileUrlHelper.php';
         $helper = new CkeditorFileUrlHelper();
-        $postDetails['content'] = $helper->appendBaseUrl( $postDetails['content'] );
+        
+        // Safely handle content field
+        if (isset($postDetails['content'])) {
+            $postDetails['content'] = $helper->appendBaseUrl($postDetails['content']);
+        } else {
+            $postDetails['content'] = '';
+        }
+        
         if (isset($postDetails['cover_image']) && !empty($postDetails['cover_image'])) {
-            $postDetails['cover_image'] = $helper->appendBaseUrl( $postDetails['cover_image'] );
+            $postDetails['cover_image'] = $helper->appendBaseUrl($postDetails['cover_image']);
         }
 
         // pass to view

@@ -55,3 +55,12 @@ function append_b2_base_url($path){
 
     return rtrim(B2_BASE_URL, '/') . '/' . ltrim($path, '/');
 }
+
+
+function debug_log($message){
+    $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 1)[0];
+    $file = isset($trace['file']) ? basename($trace['file']) : 'unknown file';
+    $line = $trace['line'] ?? 'unknown line';
+
+    error_log("[$file:$line] $message");
+}
