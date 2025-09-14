@@ -10,13 +10,13 @@
             <h1>About Me</h1>
         </section>
         <img src="assets/dp_photo1.png" alt="my photo" width="40%" class="dp">
-        <p>Hello! I’m Gbenga Opeyemi, a UI/UX designer and Junior Web Developer based in Nigeria. Currently studying Computer Sciences at the University of Lagos, Nigeria. I love creating human-centeric application that provides intuitive and engaging user experiences.</p>
+         <p>I am currently in my third year of studying Computer Science at the University of Lagos (UNILAG). I am passionate about web and backend development and work with tools like <strong>Django</strong>, <strong>PHP</strong>, and <strong>Django Rest Framework</strong> to build web applications.</p>
 
-        <p>Currently, I’m working on exciting projects, including a rental web app that focuses on streamlining the house-hunting process for both agents and home seekers. I’m also honing my web development skills in React, Django, and PHP, as well as in UX, presently reading <em>"Design of Everyday Things"</em> by <i>Don Norman</i>.</p>
+        <p>Recently, I delivered a full website for a local real estate business and developed a backend system for a hospital appointment management application as part of a school project.</p>
 
-        <p>When I’m not designing or coding, I enjoy writing articles about the Christian faith. I reflect on how my beliefs shape my work and interactions.</p>
+        <p>While web development is my primary focus, I am eager to explore other areas within computer science as I continue to grow as a developer.</p>
 
-        <p>I believe in the power of collaboration and continuous learning, and I'm always eager to connect with like-minded individuals. If you're interested in collaborating or simply want to chat, feel free to reach out!</p>
+        <p>Outside academics and work, I enjoy telling my story through technical writing. I also love reading Christian and theological works and learning about Western politics.</p>
     </div>
 </main>
 
