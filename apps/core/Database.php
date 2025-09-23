@@ -7,7 +7,7 @@ class Database{
             // $sslCertPath = __DIR__ . "/../certs/ca.crt";
             $sslCertPath = "../../app/certs/ca.pem";
             if (!$sslCertPath) {
-                 error_log("❌ Error: SSL CA certificate (ca.pem) not found!");
+                error_log("❌ Error: SSL CA certificate (ca.pem) not found!");
                 die("Error: SSL CA certificate (ca.pem) not found!");
             }
 

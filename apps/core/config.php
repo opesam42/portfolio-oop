@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 $dotenvPath = __DIR__ . '/../../';
+error_log("Env Path" . $dotenvPath . "env");
 if (file_exists($dotenvPath . '.env')) {
     $dotenv = Dotenv\Dotenv::createImmutable($dotenvPath);
     $dotenv->load();

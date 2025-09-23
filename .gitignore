@@ -1,5 +1,6 @@
 /public/phpinfo.php
 /public/opcache-status.php
-/public/.env
+.env
+/public/.env/
 /node_modules/
 /vendor/

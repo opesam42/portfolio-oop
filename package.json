@@ -5,5 +5,10 @@
   },
   "scripts": {
     "dev:css": "npx @tailwindcss/cli -i ./public/styles/input.css -o ./public/styles/output.css --watch"
-  }
+  },
+  "name": "portfolio-oop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/opesam42/portfolio-oop.git",
+  "license": "MIT"
 }
