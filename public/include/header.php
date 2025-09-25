@@ -32,6 +32,12 @@
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <!-- preloaded image start  -->
+    <link rel="preload" as="image" href="assets/dp_photo1.png">
+    <link rel="preload" as="image" href="assets/Hand coding-pana.png">
+    <link rel="preload" as="image" href="assets/dp.png">
+    <!-- preloaded image end -->
+
         
         <?php if( relURL() == 'admin' ): ?>
             <!-- load CKEDITOR FOR EDITING CONTENT -->
