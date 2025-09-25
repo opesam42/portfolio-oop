@@ -4,7 +4,8 @@
     "tailwindcss": "^4.1.12"
   },
   "scripts": {
-    "dev:css": "npx @tailwindcss/cli -i ./public/styles/input.css -o ./public/styles/output.css --watch"
+    "dev:css": "npx @tailwindcss/cli -i ./public/styles/input.css -o ./public/styles/output.css --watch",
+    "build:css": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --minify"
   },
   "name": "portfolio-oop",
   "version": "1.0.0",

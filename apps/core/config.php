@@ -9,8 +9,9 @@ if (file_exists($dotenvPath . '.env')) {
 }
 
 define("APP_ENV", $_ENV['APP_ENV'] ?? 'production');
+define("DB_ENV", $_ENV['DB_ENV'] ?? 'production');
 
-if (APP_ENV === 'development') {
+if (DB_ENV === 'development') {
     // Development
     define("DB_NAME",  'portfolio_db');
     define("DB_HOST", '127.0.0.1');
