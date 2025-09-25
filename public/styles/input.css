@@ -3,18 +3,43 @@
 @source '../../apps/views/**/*.php';
 @source '../../public/include/**/*.php';
 
+:root{
+    --transition1: all 0.4s ease-in;
+}
 
+@theme{
+  --color-primary: #127FE4;
+  --color-accent: yellow;
+  --color-sub-black: #1E1E1E;
+  --color-sub-white: #FFFAFA;
+  --color-primary-shade: #127ee412;
+  --color-sub-shade-black: #444444;
 
-@layer components{
-  .primary-color{
-    @apply bg-blue-600;
+  --animate-slideIn: slideIn 1.5s ease forwards;
+  
+  @keyframes slideIn {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-200%);
+        opacity: 1;
+    }
   }
 
+}
+
+@layer components{
+  .clamped-text{
+    font-size: clamp(40px, 2vw + 24px, 64px);
+  }
   .main-cta{
     @apply flex justify-center items-center rounded-xl font-bold p-3 hover:opacity-70 transition-opacity;
   }
 
 }
+
 
 .transition-1 {
   transition: var(--transition1);

@@ -12,6 +12,7 @@ define("DB_NAME", $_ENV['DBDATABASE'] ?? '');
 define("DB_HOST", $_ENV['DBHOST'] ?? '');
 define("DB_USER", $_ENV['DBUSER'] ?? '');
 define("DB_PASS", $_ENV['DBPASSWORD'] ?? '');
+define("DB_PORT", $_ENV['DBPORT'] ?? '3306');
 
 define("ADMIN_EMAIL_PSWD", $_ENV['ADMIN_EMAIL_PSWD'] ?? '');
 define("ADMIN_EMAIL", $_ENV['ADMIN_EMAIL'] ?? '');
@@ -27,12 +28,14 @@ define("B2_ENDPOINT", $_ENV['B2_ENDPOINT'] ?? '');
 // define("B2_BASE_URL", B2_ENDPOINT . '/' . B2_BUCKET_NAME . '/');
 define("B2_BASE_URL", "https://f003.backblazeb2.com/file/eaglespoint-website/");
 
+define("APP_ENV", $_ENV['APP_ENV'] ?? 'production');
 
-if($_SERVER['SERVER_NAME'] == "127.0.0.1"){
-    define("ROOT", "http://127.0.0.1/projects/portfolio-github/portfolio-oop/public/");    
-}else{
-    define("ROOT", "https://gbenga.koyeb.app/");   
+if (APP_ENV === 'development') {
+    define("ROOT", "http://localhost:8000/");
+    define("DEBUG", true);
+} else {
+    define("ROOT", "https://gbenga.koyeb.app/");
+    define("DEBUG", false);
 }
 
-define("DEBUG", true);
 define("AUTHOR", 'Gbenga Opeyemi');

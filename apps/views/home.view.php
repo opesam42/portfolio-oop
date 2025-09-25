@@ -3,10 +3,10 @@ $headTitle = 'Gbenga Opeyemi - UX and Web Designer';
 
 require('include/header.php');
 ?>
-        <section class="hero-section">
-            <div class="main">
-                <div class="title">Hi, I'm <span class="dot-ul">Gbenga Opeyemi</span></div>
-                <div class="sub-title">A <strong style="color:yellow; font-weight:500;">Junior Web Developer and UX/UI Designer</strong>. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
+        <section class="flex flex-col lg:flex-row gap-4 items-center justify-between self-stretch w-full bg-primary text-white py-4 px-4">
+            <div class="flex flex-col gap-4">
+                <div class="font-extrabold clamped-text">Hi, I'm <span class="text-accent">Gbenga Opeyemi</span></div>
+                <div class="max-w-[630px] font-light">A <strong class="text-accent">Web and Backend Developer</strong>. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
 
                 <div class="flex gap-2 mt-6">
                     <a class="main-cta bg-white text-blue-500" href="<?=ROOT?>/contact">Let's Connect</a>
@@ -17,8 +17,8 @@ require('include/header.php');
                 
 
             </div>
-            <div class="hero-image">
-                <img src="assets/Hand coding-pana.png" width="40%">
+            <div class="w-[30%]">
+                <img class="block w-full translate-x-[200%]  animate-slideIn" src="assets/Hand coding-pana.png" width="40%">
             </div> 
         </section>
 
