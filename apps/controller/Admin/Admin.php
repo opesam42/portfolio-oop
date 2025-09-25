@@ -80,6 +80,10 @@ class Admin{
             redirect(ROOT . "admin"); //if admin session is not present, redirect to login
         }
 
+        // get the project categories
+        $projectCatModel = new ProjectCategory();
+        $project_categories = $projectCatModel->findAll();
+        
         if($_SERVER["REQUEST_METHOD"] === "POST"){
             $check = $this->handleAddForm();
              
@@ -89,7 +93,9 @@ class Admin{
             }
         }
 
-        $this->view('add');
+        $this->view('add', [
+            'proj_cats' => $project_categories
+        ]);
     }
 
     public function handleAddForm() {
@@ -103,7 +109,7 @@ class Admin{
             'description' => $_POST['descr'],
             'cover_image' => $this->uploadToB2($sub_folder="cover"),
             'is_visible' => $_POST['visibility'],
-            'project_type' => $_POST['proj_type'],
+            'project_category_id' => $_POST['proj_type'],
             'live_site_link' => $_POST['live_site_link'],
             'design_link' => $_POST['design_link'],
             'github_link' => $_POST['github_link'],
@@ -121,6 +127,10 @@ class Admin{
         if(empty($adminSession)){
             redirect(ROOT . "admin"); //if admin session is not present, redirect to login
         }
+
+        // get the project categories
+        $projectCatModel = new ProjectCategory();
+        $project_categories = $projectCatModel->findAll();
 
         $projectModel = new CaseStudies();
         $arr['slug'] = $slug;
@@ -160,6 +170,7 @@ class Admin{
         // pass to view
         $this->view('edit', [
             'row' => $postDetails,
+            'proj_cats' => $project_categories,
         ] );
         return $postDetails;
         
@@ -184,7 +195,7 @@ class Admin{
             'description' => $_POST['descr'],
             'cover_image' => $coverImage,
             'is_visible' => $_POST['visibility'],
-            'project_type' => $_POST['proj_type'],
+            'project_category_id' => $_POST['proj_type'],
             'live_site_link' => $_POST['live_site_link'],
             'design_link' => $_POST['design_link'],
             'github_link' => $_POST['github_link'],

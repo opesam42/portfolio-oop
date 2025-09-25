@@ -81,8 +81,13 @@ require('include/header.php');
 
         <label for="proj_type">Project type</label>
         <div style="margin-bottom:1rem;">
-            <input type="radio" name="proj_type" value="UI-UX" checked> UI/UX
-            <input type="radio" name="proj_type" value="Web"> Web
+            <?php foreach ($proj_cats as $proj_cat): ?>
+                <label>
+                    <input type="radio" name="proj_type" value="<?= htmlspecialchars($proj_cat->id) ?>">
+                    <?= htmlspecialchars($proj_cat->name) ?>
+                </label><br>
+            <?php endforeach; ?>
+            
         </div>
 
         <label for="visibility">Visibility</label>

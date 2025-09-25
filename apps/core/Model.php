@@ -56,29 +56,6 @@ class Model extends Database{
 
     }
 
-    /* public function update($data, $id_column = 'id'){
-
-        // remove unwanted data
-        if(!empty($this->allowedColumns)){
-            foreach($data as $key => $value){
-                if(!in_array($key, $this->allowedColumns)){
-                    unset( $data[$key] );
-                }
-            }
-        }
-        $keys = array_keys($data);
-        $query = "UPDATE {$this->table} SET ";
-        foreach($keys as $key){
-            $query .=  $key . " = " . ":" . $key . ", " ;
-        }
-        $query = trim($query, ", ");
-        $query .= " WHERE id= :id";
-        $data[$id_column] = $id_column;
-        $result = $this->insertQuery( $query, $data );
-        // show($query);
-    }
- */
-
     public function update($data, $id, $id_column = 'id') {
 
         // Remove unwanted data if needed

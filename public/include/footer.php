@@ -23,8 +23,7 @@ if( relURL()  != 'contact'){
                 </div>
             </section>
         </footer>
-
-
+       
     <script src="<?=ROOT?>scripts/script.js"  type="text/javascript"></script>
 </body>
 </html>

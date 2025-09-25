@@ -93,8 +93,13 @@ $contentSanitized = "<p>" . preg_replace("/\n/", "</p><p>", $row['content']);
 
         <label for="proj_type">Project type</label>
         <div style="margin-bottom:1rem;">
-            <input type="radio" name="proj_type" value="UI-UX" <?php if($row['project_type']=='UI-UX') echo 'checked'; ?>> UI/UX
-            <input type="radio" name="proj_type" value="Web" <?php if($row['project_type']=='Web') echo 'checked'; ?>> Web
+            <?php foreach ($proj_cats as $proj_cat): ?>
+                <label>
+                    <input type="radio" name="proj_type" value="<?= htmlspecialchars($proj_cat->id) ?>"
+                        <?= ($proj_cat->id == $row['project_category_id']) ? 'checked' : '' ?>>
+                    <?= htmlspecialchars($proj_cat->name) ?>
+                </label><br>
+            <?php endforeach; ?>
         </div>
 
         <label for="visibility">Visibility</label>

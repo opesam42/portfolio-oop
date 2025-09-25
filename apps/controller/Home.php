@@ -21,9 +21,17 @@ class Home {
     private function getProjects(){
         // get info from case studies
         $projectModel = new CaseStudies();
-        // fetch project that are not drafts
-        $arr['is_visible'] = 1;
-        return $projectModel->where($arr);
+        $sql = "SELECT cs.*, pc.name AS project_type
+                FROM case_studies cs
+                LEFT JOIN project_categories pc
+                ON cs.project_category_id = pc.id
+                WHERE cs.is_visible = :is_visible
+                ORDER BY cs.id DESC
+                LIMIT 10";
+        
+        $params = ['is_visible' => 1];
+        $projects = $projectModel->query($sql, $params);
+        return $projects;
         // return $projectModel->findAll();
     }
 }

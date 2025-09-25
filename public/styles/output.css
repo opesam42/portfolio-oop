@@ -235,9 +235,6 @@
   .max-w-\[630px\] {
     max-width: 630px;
   }
-  .flex-grow {
-    flex-grow: 1;
-  }
   .grow {
     flex-grow: 1;
   }
@@ -253,9 +250,6 @@
   }
   .animate-slideIn {
     animation: var(--animate-slideIn);
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -336,9 +330,6 @@
   .italic {
     font-style: italic;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
@@ -360,11 +351,6 @@
   }
   .lg\:flex-row {
     @media (width >= 64rem) {
-      flex-direction: row;
-    }
-  }
-  .xl\:flex-row {
-    @media (width >= 80rem) {
       flex-direction: row;
     }
   }

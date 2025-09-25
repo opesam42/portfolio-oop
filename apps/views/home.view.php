@@ -136,14 +136,7 @@ require('include/header.php');
                         </div>
                         <div class='detail'>
                             <h3 class='proj-title'><?php echo $project->title ?></h3>
-                            <?php
-                            if($project->project_type == 'UI-UX'){
-                                $tag = 'UI/UX';
-                            } else if($project->project_type == 'Web'){
-                                $tag = 'Web Development';
-                            }
-                            ?>
-                            <div class='tag'> <?php echo $tag; ?> </div>
+                            <div class='tag'> <?php echo $project->project_type; ?> </div>
                             <p class='descr'> <?php echo $project->description; ?> </p>
                         </div>
                     </article>
