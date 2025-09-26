@@ -3,25 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?=$metaDescr ?? META_DESCRIPTION;?>">
 
-    <!-- DESCRIPTION TAG -->
-    <?php if( relURL() != 'project' ): ?>
-            <meta name="description" content="Gbenga Opeyemi is a UI/UX designer and junior web developer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.">
-    <?php else: ?>
-            <meta name='description' content='" .$metaDescr . "'> 
-    <?php endif; ?>
-
-
-    <meta name="keywords" content="UI, UX, Web Designer, Web Developer, Portfolio, Gbenga, Opeyemi">
-    <meta name="author" content="Gbenga Opeyemi">
+    <meta name="keywords" content="<?=$metaKeywords ?? META_KEYWORDS;?>">
+    <meta name="author" content="<?=AUTHOR?>">
     <meta name="robots" content="index, follow">
 
-    <title><?php echo $headTitle; ?></title>
-    <link rel="icon" src="<?php echo ROOT?>assets/favicon.png" type="image/png">
+    <title><?= isset($headTitle) ? $headTitle . " | " . SITE_NAME : SITE_NAME; ?></title>
+    <link rel="icon" src="<?=ROOT?>assets/favicon.png" type="image/png">
 
-    <!-- add tailwind css -->
-    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
-    <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -38,23 +28,40 @@
     <link rel="preload" as="image" href="assets/dp.png">
     <!-- preloaded image end -->
 
-        
-        <?php if( relURL() == 'admin' ): ?>
-            <!-- load CKEDITOR FOR EDITING CONTENT -->
-            <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.css" />
-            <script src="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.umd.js"></script>
-
-        <?php elseif( relURL() == 'project' || relURL() == 'contact' || relURL() == 'edit' || relURL('') == 'add' || relURL('') == 'admin' || relURL('') == 'about'): ?>
-            <!-- load project css -->
-            <link rel='stylesheet' href="<?=ROOT?>styles/proj.css" >
-        
-        <?php endif; ?>
-
-        <!--main styles-->
         <link href="<?=ROOT?>styles/main.css" rel="stylesheet">
         <link href="<?=ROOT?>styles/output.css" rel="stylesheet">
-</head>
 
+        <?php 
+            $page = relURL(); // Call relURL() once and store it
+            $pagesThatNeedProjCSS = ['project', 'contact', 'edit', 'add', 'about'];
+
+            if (in_array($page, $pagesThatNeedProjCSS)) : ?>
+                <!-- load project css -->
+                <link rel="stylesheet" href="<?= ROOT ?>styles/proj.css">
+        <?php endif; ?>
+        
+        <?php if (!empty($extraHeadContent)) echo $extraHeadContent; ?>
+
+        <?php
+            if(isAdminPage() == false && APP_ENV === 'production') {
+                echo <<<'HTML'
+                <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVK59XP6GQ"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-TVK59XP6GQ');
+                </script>
+                HTML;
+            }
+        ?>
+        
+</head>
+<?php
+
+?>
 
 
 <body>

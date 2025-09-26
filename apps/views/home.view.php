@@ -1,5 +1,4 @@
 <?php
-$headTitle = 'Gbenga Opeyemi - UX and Web Designer';
 
 require('include/header.php');
 ?>

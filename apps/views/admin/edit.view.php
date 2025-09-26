@@ -1,6 +1,14 @@
 <?php
 
 $headTitle = "Edit " . $row['title'];
+
+ob_start(); ?>
+    <link rel="stylesheet" href="<?= ROOT ?>styles/proj.css">
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.css" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.umd.js"></script>
+<?php
+$extraHeadContent = ob_get_clean();
+
 require('include/header.php');
 
 $contentSanitized = "<p>" . preg_replace("/\n/", "</p><p>", $row['content']);

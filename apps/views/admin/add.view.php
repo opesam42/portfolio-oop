@@ -1,5 +1,13 @@
 <?php
 $headTitle = "Add New Project";
+
+ob_start(); ?>
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.css" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/43.1.1/ckeditor5.umd.js"></script>
+    <link rel="stylesheet" href="<?= ROOT ?>styles/proj.css">
+<?php
+$extraHeadContent = ob_get_clean();
+
 require('include/header.php');
 ?>
 

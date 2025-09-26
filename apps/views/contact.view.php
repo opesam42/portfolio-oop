@@ -1,5 +1,11 @@
 <?php
-    $headTitle = 'Contact | Gbenga Opeyemi - UX and Web Designer';
+    $headTitle = 'Contact';
+
+    ob_start(); ?>
+        <link rel="stylesheet" href="<?= ROOT ?>styles/proj.css">
+    <?php
+    $extraHeadContent = ob_get_clean();
+
     require('include/header.php');
 ?>
 <main class="contact">

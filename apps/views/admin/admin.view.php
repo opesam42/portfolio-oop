@@ -1,5 +1,6 @@
 <?php
-    $headTitle = 'Admin Panel | Gbenga Opeyemi Portfolio';
+    $headTitle = 'Admin Panel';
+
     require "include/header.php";
 ?>
 

@@ -15,7 +15,7 @@ class Project {
         } else{
             $project = (array) $project[0];
         }
-        // echo var_dump($project);
+
         // append base_b2_url to the image src of the project post
         try{
             require_once __DIR__ . '../../misc/CkeditorFileUrlHelper.php';
@@ -28,7 +28,6 @@ class Project {
         try{
             if(isset($project["cover_image"])){
                 $project['cover_image'] = append_b2_base_url($project['cover_image']);
-                error_log("CoverImageURL " . $project['cover_image']);
             }
         } catch(Exception $err){
             error_log("Error appending base URl " . $err->getMessage());

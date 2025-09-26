@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 $dotenvPath = __DIR__ . '/../../';
-error_log("Env Path" . $dotenvPath . "env");
 if (file_exists($dotenvPath . '.env')) {
     $dotenv = Dotenv\Dotenv::createImmutable($dotenvPath);
     $dotenv->load();
@@ -28,8 +27,6 @@ if (DB_ENV === 'development') {
     
 }
 
-error_log("db_name" . DB_NAME);
-
 define("ADMIN_EMAIL_PSWD", $_ENV['ADMIN_EMAIL_PSWD'] ?? '');
 define("ADMIN_EMAIL", $_ENV['ADMIN_EMAIL'] ?? '');
 define("ADMIN_EMAIL_BACKUP1", $_ENV["ADMIN_EMAIL_BACKUP1"] ?? '');
@@ -54,3 +51,14 @@ if (APP_ENV === 'development') {
 }
 
 define("AUTHOR", 'Gbenga Opeyemi');
+
+
+/* START META INFO CONSTANTS */
+
+define("SITE_NAME", "Gbenga Opeyemi - Full-Stack Web Developer");
+define("META_DESCRIPTION", "Gbenga Opeyemi is a FullStack Web Developer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.");
+define("META_KEYWORDS", 
+    "Web Developer, Backend Developer, Software Developer, Django Developer, PHP Developer, API Developer, Django Rest Framework, MySQL, PostgreSQL, Web Development, Freelance Developer, Portfolio, Gbenga Opeyemi, Opeyemi Oluwagbemiga, Lagos, Nigeria"
+);
+
+/* END META INFO CONSTANTS */

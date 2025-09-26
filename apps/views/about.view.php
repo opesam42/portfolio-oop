@@ -1,5 +1,5 @@
 <?php
-    $headTitle = "About Me | Gbenga Opeyemi";
+    $headTitle = "About Me";
     require('include/header.php');
 
 ?>

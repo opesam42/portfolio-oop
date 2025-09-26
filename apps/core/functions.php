@@ -64,3 +64,11 @@ function debug_log($message){
 
     error_log("[$file:$line] $message");
 }
+
+function isAdminPage(){
+    if (relURL() === 'admin') {
+        return true;
+    }
+    return false;
+}
+
