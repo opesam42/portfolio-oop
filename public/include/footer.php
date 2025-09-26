@@ -19,7 +19,7 @@ if( relURL()  != 'contact'){
                     <a href="https://linkedin.com/in/opeyemi-oluwagbemiga-2ba61423b" target="blank"><i class="fa fa-regular fa-linkedin"></i> LinkedIn</a>
                 </nav>
                 <div class="copyright">
-                    &copy; Gbenga Opeyemi 2024
+                    &copy; Gbenga Opeyemi <span x-data x-text="new Date().getFullYear()">2025</span>
                 </div>
             </section>
         </footer>
