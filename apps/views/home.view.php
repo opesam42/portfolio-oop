@@ -5,10 +5,17 @@ require('include/header.php');
         <section class="flex flex-col lg:flex-row gap-4 items-center justify-between self-stretch w-full bg-primary text-white py-4 px-4">
             <div class="flex flex-col gap-4">
                 <div class="font-extrabold clamped-text">Hi, I'm <span class="animated-gradient-text">Gbenga Opeyemi</span></div>
-                <div class="max-w-[630px] font-light">A <strong class="text-accent">Web and Backend Developer</strong>. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.</div>
+                <div class="max-w-[630px] font-light">A <strong class="text-accent font-semibold">Web and Backend Developer</strong>. I build scalable websites and backend systems using <strong class="text-accent font-semibold">Django, PHP</strong>, and modern web technologies. I am open to freelance opportunities to improve user experience and <strong class="text-accent font-semibold">help businesses achieve their goals.</strong></div>
+                <!-- <div class="flex flex-col border-b-[.1px] border-white pb-2">
+                    <h1 class="font-extrabold clamped-text">Hi, I'm <span class="animated-gradient-text">Gbenga Opeyemi</span><h1>
+                    <h2 class="font-bold">A Web and Backend Developer.</h2>
+                </div> -->
+                
+                <!-- <div class="max-w-[630px] font-light">
+                <p>I build scalable websites and backend systems using Django, PHP, and modern web technologies. I am open to freelance opportunities to improve user experience and help businesses achieve their goals.</p></div> -->
 
-                <div class="flex gap-2 mt-6">
-                    <a class="main-cta bg-white text-blue-500" href="<?=ROOT?>/contact">Let's Connect</a>
+                <div class="flex gap-4 mt-6">
+                    <a class="main-cta bg-white text-blue-500" href="<?=ROOT?>/contact">Hire Me</a>
 
                     <a class="main-cta text-white border-2 border-white" target="_blank" href="https://f003.backblazeb2.com/file/eaglespoint-website/gbenga_portfolio/my_resume/OLUWAGBEMIGA+OPEYEMI+CV+V2.pdf">Download CV</a>
                 </div>

@@ -55,8 +55,8 @@ define("AUTHOR", 'Gbenga Opeyemi');
 
 /* START META INFO CONSTANTS */
 
-define("SITE_NAME", "Gbenga Opeyemi - Full-Stack Web Developer");
-define("META_DESCRIPTION", "Gbenga Opeyemi is a FullStack Web Developer. Open to freelancing opportunities to improve user experience and help businesses achieve their goals.");
+define("SITE_NAME", "Gbenga Opeyemi - Web & Backend Developer");
+define("META_DESCRIPTION", "Hi, I'm Gbenga Opeyemi — a Web and Backend Developer. I build scalable web applications and APIs using Django, PHP, and modern web technologies. Open to freelance opportunities to improve user experience and help businesses achieve their goals.");
 define("META_KEYWORDS", 
     "Web Developer, Backend Developer, Software Developer, Django Developer, PHP Developer, API Developer, Django Rest Framework, MySQL, PostgreSQL, Web Development, Freelance Developer, Portfolio, Gbenga Opeyemi, Opeyemi Oluwagbemiga, Lagos, Nigeria"
 );

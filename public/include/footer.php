@@ -3,7 +3,7 @@
 if( relURL()  != 'contact'){
 ?>
 <aside class="flex gap-3 mt-6">
-    <a class="main-cta bg-blue-500 text-white" href="<?=ROOT?>contact">Let's Connect</a>
+    <a class="main-cta bg-blue-500 text-white" href="<?=ROOT?>contact">Hire Me</a>
     <a class="main-cta text-blue-500 border-2 border-blue-500" target="_blank" href="https://f003.backblazeb2.com/file/eaglespoint-website/gbenga_portfolio/my_resume/OLUWAGBEMIGA+OPEYEMI+CV+V2.pdf">Download CV</a>
 </aside>
 <?php
